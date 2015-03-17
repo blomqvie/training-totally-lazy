@@ -1,19 +1,18 @@
-package training.reaktor.fi.totallylazyapplication;
-
-import java.util.Locale;
+package fi.reaktor.training.totallylazy;
 
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
+import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+
+import java.util.Locale;
+
+import fi.reaktor.training.totallylazy.LazyListFragment;
+import training.reaktor.fi.totallylazyapplication.R;
 
 
 public class MainActivity extends Activity {

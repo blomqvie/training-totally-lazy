@@ -1,4 +1,4 @@
-package training.reaktor.fi.totallylazyapplication.data;
+package fi.reaktor.training.totallylazy.data;
 
 public class Beer {
 

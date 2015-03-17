@@ -1,4 +1,4 @@
-package training.reaktor.fi.totallylazyapplication.adapter;
+package fi.reaktor.training.totallylazy.adapter;
 
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +10,7 @@ import com.googlecode.totallylazy.Sequences;
 import com.googlecode.totallylazy.collections.PersistentMap;
 
 import training.reaktor.fi.totallylazyapplication.R;
-import training.reaktor.fi.totallylazyapplication.data.Beer;
+import fi.reaktor.training.totallylazy.data.Beer;
 
 public class BeerAdapter extends BaseAdapter {
 

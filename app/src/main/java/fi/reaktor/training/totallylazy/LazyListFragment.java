@@ -1,4 +1,4 @@
-package training.reaktor.fi.totallylazyapplication;
+package fi.reaktor.training.totallylazy;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -10,8 +10,9 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import training.reaktor.fi.totallylazyapplication.adapter.BeerAdapter;
-import training.reaktor.fi.totallylazyapplication.data.Beverages;
+import training.reaktor.fi.totallylazyapplication.R;
+import fi.reaktor.training.totallylazy.adapter.BeerAdapter;
+import fi.reaktor.training.totallylazy.data.Beverages;
 
 public class LazyListFragment extends Fragment {
 
