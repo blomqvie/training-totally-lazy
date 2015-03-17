@@ -7,16 +7,18 @@ import android.widget.TextView;
 
 import com.googlecode.totallylazy.Sequence;
 
+import java.util.List;
+
 import fi.reaktor.training.totallylazy.data.Beer;
 import fi.reaktor.training.totallylazy.data.Beers;
 import training.reaktor.fi.totallylazyapplication.R;
 
 public class BeerAdapter extends BaseAdapter {
 
-    Sequence<Beer> beers;
+    List<Beer> beers;
 
     public BeerAdapter() {
-        beers = Beers.list();
+        beers = Beers.list().toList();
     }
 
 
