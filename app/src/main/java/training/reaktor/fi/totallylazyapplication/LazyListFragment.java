@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import training.reaktor.fi.totallylazyapplication.adapter.BeerAdapter;
 import training.reaktor.fi.totallylazyapplication.data.Beverages;
@@ -34,7 +35,16 @@ public class LazyListFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         ListView itemList = (ListView) view.findViewById(R.id.item_list);
         int sectionNumber = getArguments().getInt(SECTION_NUMBER);
+        TextView sectionLabel = (TextView) view.findViewById(R.id.section_label);
+        sectionLabel.setText(getLabel(sectionNumber));
         itemList.setAdapter(getAdapter(sectionNumber));
+    }
+
+    private String getLabel(int sectionNumber) {
+        switch (sectionNumber) {
+            case 0: return "Beers";
+            default: return "Unknown";
+        }
     }
 
     private ListAdapter getAdapter(int sectionNumber) {
