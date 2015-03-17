@@ -22,7 +22,7 @@ public class BeerAdapter extends BaseAdapter {
 
     private Sequence<Beer> findBeers(Sequence<PersistentMap<String, String>> beverages) {
         // TODO implement this!
-        return Sequences.empty();
+        return Sequences.one(new Beer(1L, "Lapin Kulta", "4.7"));
     }
 
     @Override
