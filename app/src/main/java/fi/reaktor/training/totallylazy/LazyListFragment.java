@@ -10,9 +10,8 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import training.reaktor.fi.totallylazyapplication.R;
 import fi.reaktor.training.totallylazy.adapter.BeerAdapter;
-import fi.reaktor.training.totallylazy.data.Beverages;
+import training.reaktor.fi.totallylazyapplication.R;
 
 public class LazyListFragment extends Fragment {
 
@@ -51,10 +50,10 @@ public class LazyListFragment extends Fragment {
     private ListAdapter getAdapter(int sectionNumber) {
         switch (sectionNumber) {
             case 0: {
-                return new BeerAdapter(Beverages.beverageSequence());
+                return new BeerAdapter();
             }
             default: {
-                return new BeerAdapter(Beverages.beverageSequence());
+                return new BeerAdapter();
             }
         }
     }

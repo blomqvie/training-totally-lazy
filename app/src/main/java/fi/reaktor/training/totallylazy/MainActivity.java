@@ -6,12 +6,17 @@ import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
 import java.util.Locale;
 
-import fi.reaktor.training.totallylazy.LazyListFragment;
+import fi.reaktor.training.totallylazy.data.Beers;
+import fi.reaktor.training.totallylazy.jackson.deser.TotallylazyModule;
 import training.reaktor.fi.totallylazyapplication.R;
 
 
@@ -32,11 +37,13 @@ public class MainActivity extends Activity {
      */
     ViewPager mViewPager;
 
+    private ObjectMapper objectMapper = new ObjectMapper();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        objectMapper.registerModule(new TotallylazyModule());
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -45,6 +52,12 @@ public class MainActivity extends Activity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        try {
+            Beers.init(getResources().openRawResource(R.raw.beers), objectMapper);
+        } catch (IOException e) {
+            Log.e("MainActivity", "Can't read beers.json!", e);
+            finish();
+        }
 
     }
 

@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "brewery_id": 1,
+    "name": "Lapin Kulta",
+    "cat_id": 1,
+    "style_id": 1,
+    "abv": 4.7,
+    "ibu": 1.0,
+    "srm": 1.0
+  }
+]

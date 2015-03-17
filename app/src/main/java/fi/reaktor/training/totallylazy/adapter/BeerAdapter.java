@@ -6,24 +6,19 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.googlecode.totallylazy.Sequence;
-import com.googlecode.totallylazy.Sequences;
-import com.googlecode.totallylazy.collections.PersistentMap;
 
-import training.reaktor.fi.totallylazyapplication.R;
 import fi.reaktor.training.totallylazy.data.Beer;
+import fi.reaktor.training.totallylazy.data.Beers;
+import training.reaktor.fi.totallylazyapplication.R;
 
 public class BeerAdapter extends BaseAdapter {
 
     Sequence<Beer> beers;
 
-    public BeerAdapter(Sequence<PersistentMap<String, String>> beverages) {
-        beers = findBeers(beverages);
+    public BeerAdapter() {
+        beers = Beers.list();
     }
 
-    private Sequence<Beer> findBeers(Sequence<PersistentMap<String, String>> beverages) {
-        // TODO implement this!
-        return Sequences.one(new Beer(1L, "Lapin Kulta", "4.7"));
-    }
 
     @Override
     public int getCount() {
@@ -50,7 +45,7 @@ public class BeerAdapter extends BaseAdapter {
 
         BeerViewHolder holder = (BeerViewHolder) view.getTag();
         holder.name.setText(getItem(i).name);
-        holder.abv.setText(getItem(i).alcoholByVolume);
+        holder.abv.setText(Float.toString(getItem(i).abv));
 
         return view;
     }
