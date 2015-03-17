@@ -1,4 +1,4 @@
-package training.reaktor.fi.totallylazyapplication;
+package fi.reaktor.training.totallylazy;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
