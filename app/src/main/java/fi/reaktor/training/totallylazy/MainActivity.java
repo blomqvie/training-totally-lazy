@@ -90,15 +90,12 @@ public class MainActivity extends Activity {
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
             return LazyListFragment.newInstance(position);
         }
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            return 5;
         }
 
         @Override
@@ -110,6 +107,10 @@ public class MainActivity extends Activity {
                 case 1:
                     return getString(R.string.title_section2).toUpperCase(l);
                 case 2:
+                    return getString(R.string.title_section3).toUpperCase(l);
+                case 3:
+                    return getString(R.string.title_section3).toUpperCase(l);
+                case 4:
                     return getString(R.string.title_section3).toUpperCase(l);
             }
             return null;

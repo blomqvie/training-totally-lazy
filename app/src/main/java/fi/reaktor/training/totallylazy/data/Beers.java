@@ -10,7 +10,7 @@ import java.io.InputStream;
 public class Beers {
 
     private static Sequence<Beer> beers;
-    // XXX: this is a bit naughty
+    // XXX: static init is nasty and JSON should be read asynchronously
     public static Beers init(InputStream inputStream, ObjectMapper objectMapper) throws IOException {
         beers = objectMapper.readValue(inputStream, new TypeReference<Sequence<Beer>>() {});
         return new Beers();
