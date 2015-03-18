@@ -9,7 +9,7 @@ public class Exercises {
             case 1:
                 return new Exercise2();
             case 2:
-                return new Exercise1();
+                return new Exercise3();
             default:
                 return new Exercise1();
         }
