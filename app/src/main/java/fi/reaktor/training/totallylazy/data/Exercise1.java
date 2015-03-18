@@ -5,13 +5,13 @@ import com.googlecode.totallylazy.Sequence;
 public class Exercise1 extends Exercise {
 
     @Override
-    public Sequence<Beer> getBeers() {
+    public Sequence<Beer> getBeers(Sequence<Beer> beers) {
         // TODO:
         // 1. get beers with abv greater than 10
         // 2. sort the beers by name
         // 3. return the first 10 results
         //
-        return getAllBeers();
+        return beers;
     }
 
     @Override
@@ -20,7 +20,7 @@ public class Exercise1 extends Exercise {
     }
 
     @Override
-    public String getString() {
+    public String getString(Sequence<Beer> beers) {
         return "I only know sequences"; // nop
     }
 }

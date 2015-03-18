@@ -6,16 +6,16 @@ import static com.googlecode.totallylazy.Sequences.empty;
 
 public class Exercise3 extends Exercise {
     @Override
-    public Sequence<Beer> getBeers() {
+    public Sequence<Beer> getBeers(Sequence<Beer> beers) {
         // ignore this, just implement getString()
         return empty();
     }
 
     @Override
-    public String getString() {
+    public String getString(Sequence<Beer> beers) {
         // TODO:
         // return a string that has all the names and abvs of brewery id 1142
-        return getAllBeers()
+        return beers
                 .take(2)
                 .map((beer) -> "make a string here")
                 .toString(", ");

@@ -12,7 +12,7 @@ import fi.reaktor.training.totallylazy.data.Exercise;
 import fi.reaktor.training.totallylazy.data.Exercises;
 import training.reaktor.fi.totallylazyapplication.R;
 
-public class LazyInfoViewFragment extends Fragment {
+public class LazyInfoViewFragment extends BeerFragment {
 
     private static final String SECTION_NUMBER = "SECTION_NUMBER";
 
@@ -32,13 +32,13 @@ public class LazyInfoViewFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        TextView label = (TextView) view.findViewById(R.id.info_label);
-        TextView text = (TextView) view.findViewById(R.id.info_text);
-
-        int sectionNumber = getArguments().getInt(SECTION_NUMBER);
-        Exercise e = Exercises.getExerciseBySection(sectionNumber);
-        label.setText(e.getLabel());
-        text.setText(e.getString());
+        subscribeToBeers(beers -> {
+            Exercise e = Exercises.getExerciseBySection(getArguments().getInt(SECTION_NUMBER));
+            TextView label = (TextView) view.findViewById(R.id.info_label);
+            TextView text = (TextView) view.findViewById(R.id.info_text);
+            label.setText(e.getLabel());
+            text.setText(e.getString(beers));
+        });
     }
 }
 

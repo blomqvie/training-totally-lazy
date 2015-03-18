@@ -53,7 +53,7 @@ public class MainActivity extends Activity {
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
         try {
-            Beers.init(getResources().openRawResource(R.raw.beers), objectMapper);
+            Beers.init(this, objectMapper);
         } catch (IOException e) {
             Log.e("MainActivity", "Can't read beers.json!", e);
             finish();
