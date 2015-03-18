@@ -36,7 +36,7 @@ public class Exercise1 extends Exercise {
 
     @Override
     public String getLabel() {
-        return "Beers between 8 and 10 ABV";
+        return "10 beers over 10%";
     }
 
     @Override

@@ -23,4 +23,16 @@ public class Exercise2 extends Exercise {
                     return beer.cloneWithName(beer.name.toUpperCase());
                 });
     }
+
+    @Override
+    public String getString() {
+        return "";
+    }
+
+    @Override
+    public String getLabel() {
+        return "Beers over 8%";
+    }
+
+
 }
