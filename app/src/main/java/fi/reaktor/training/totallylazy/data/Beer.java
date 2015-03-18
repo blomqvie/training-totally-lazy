@@ -36,4 +36,13 @@ public class Beer {
         this.ibu = ibu;
         this.srm = srm;
     }
-}
+
+    @Override
+    public Beer clone() {
+        return new Beer(this.id, this.breweryId, this.name, this.catId, this.styleId, this.abv, this.ibu, this.srm);
+    }
+
+    public Beer cloneWithName(String name) {
+        return new Beer(this.id, this.breweryId, name, this.catId, this.styleId, this.abv, this.ibu, this.srm);
+    }
+ }

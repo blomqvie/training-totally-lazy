@@ -11,7 +11,11 @@ import android.widget.TextView;
 
 import fi.reaktor.training.totallylazy.adapter.BeerAdapter;
 import fi.reaktor.training.totallylazy.data.Exercise;
+<<<<<<< HEAD
 import fi.reaktor.training.totallylazy.data.Exercises;
+=======
+import fi.reaktor.training.totallylazy.data.Exercise2;
+>>>>>>> 2 exercises
 import training.reaktor.fi.totallylazyapplication.R;
 
 public class LazyListFragment extends Fragment {
