@@ -16,12 +16,7 @@ public class Exercise2 extends Exercise {
         // 2) also sort by descending abv (sortBy)
         // 3) make the beer name ALL UPPERCASE
         // tip: https://code.google.com/p/totallylazy/wiki/Sequence
-        return getAllBeers()
-                .filter((beer) -> beer.abv >= 8)
-                .sortBy((beer) -> -beer.abv)
-                .map((beer) -> {
-                    return beer.cloneWithName(beer.name.toUpperCase());
-                });
+        return getAllBeers();
     }
 
     @Override
