@@ -1,7 +1,6 @@
 package fi.reaktor.training.totallylazy.data;
 
 import android.app.Activity;
-import android.util.Log;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,8 +10,6 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import rx.Observable;
-import rx.android.app.AppObservable;
-import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import training.reaktor.fi.totallylazyapplication.R;
 

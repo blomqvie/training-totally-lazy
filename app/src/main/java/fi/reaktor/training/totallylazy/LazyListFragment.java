@@ -36,6 +36,8 @@ public class LazyListFragment extends BeerFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         subscribeToBeers(beers -> {
             Exercise exercise = Exercises.getExerciseBySection(getArguments().getInt(SECTION_NUMBER));
+            View progressBar = view.findViewById(R.id.list_progressbar);
+            progressBar.setVisibility(View.GONE);
             ListView itemList = (ListView) view.findViewById(R.id.item_list);
             TextView sectionLabel = (TextView) view.findViewById(R.id.section_label);
             sectionLabel.setText(exercise.getLabel());
