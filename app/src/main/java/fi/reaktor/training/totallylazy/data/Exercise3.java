@@ -1,15 +1,9 @@
 package fi.reaktor.training.totallylazy.data;
 
-import android.util.Log;
-
 import com.googlecode.totallylazy.Sequence;
 
-import static com.googlecode.totallylazy.Segment.methods.sequence;
 import static com.googlecode.totallylazy.Sequences.empty;
 
-/**
- * Created by evir on 18/03/15.
- */
 public class Exercise3 extends Exercise {
     @Override
     public Sequence<Beer> getBeers() {

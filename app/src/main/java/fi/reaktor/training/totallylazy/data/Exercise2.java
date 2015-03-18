@@ -2,9 +2,6 @@ package fi.reaktor.training.totallylazy.data;
 
 import com.googlecode.totallylazy.Sequence;
 
-/**
- * Created by evir on 18/03/15.
- */
 public class Exercise2 extends Exercise {
 
     public Exercise2() {}
@@ -12,7 +9,7 @@ public class Exercise2 extends Exercise {
     @Override
     public Sequence<Beer> getBeers() {
         // TODO:
-        // 1) return beers between with abv >= 8
+        // 1) return beers with abv between 8 and 10
         // 2) also sort by descending abv (sortBy)
         // 3) make the beer name ALL UPPERCASE
         // tip: https://code.google.com/p/totallylazy/wiki/Sequence

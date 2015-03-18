@@ -1,12 +1,7 @@
 package fi.reaktor.training.totallylazy.data;
 
-import com.googlecode.totallylazy.Predicate;
 import com.googlecode.totallylazy.Sequence;
-import java.util.Comparator;
 
-/**
- * Created by evir on 18/03/15.
- */
 public class Exercise1 extends Exercise {
 
     @Override
