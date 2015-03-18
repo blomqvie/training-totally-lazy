@@ -18,4 +18,9 @@ public class Exercise1 extends Exercise {
     public String getLabel() {
         return "Beers between 8 and 10 ABV";
     }
+
+    @Override
+    public String getString() {
+        return "I only know sequences"; // nop
+    }
 }

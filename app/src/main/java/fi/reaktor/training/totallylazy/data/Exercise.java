@@ -10,5 +10,6 @@ public abstract class Exercise {
         return Beers.listAll();
     }
     public abstract Sequence<Beer> getBeers();
+    public abstract String getString();
     public abstract String getLabel();
 }

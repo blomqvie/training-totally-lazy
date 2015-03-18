@@ -10,10 +10,6 @@ public class Exercises {
                 return new Exercise1();
             case 2:
                 return new Exercise1();
-            case 3:
-                return new Exercise1();
-            case 4:
-                return new Exercise1();
             default:
                 return new Exercise1();
         }

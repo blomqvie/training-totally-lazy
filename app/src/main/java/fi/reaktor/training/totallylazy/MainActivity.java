@@ -90,12 +90,16 @@ public class MainActivity extends Activity {
 
         @Override
         public Fragment getItem(int position) {
-            return LazyListFragment.newInstance(position);
+            if(position < 2) {
+                return LazyListFragment.newInstance(position);
+            } else {
+                return LazyInfoViewFragment.newInstance(position);
+            }
         }
 
         @Override
         public int getCount() {
-            return 5;
+            return 3;
         }
 
         @Override
@@ -107,10 +111,6 @@ public class MainActivity extends Activity {
                 case 1:
                     return getString(R.string.title_section2).toUpperCase(l);
                 case 2:
-                    return getString(R.string.title_section3).toUpperCase(l);
-                case 3:
-                    return getString(R.string.title_section3).toUpperCase(l);
-                case 4:
                     return getString(R.string.title_section3).toUpperCase(l);
             }
             return null;
