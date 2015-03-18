@@ -11,7 +11,7 @@ android {
     }
     defaultConfig {
         applicationId "training.reaktor.fi.totallylazyapplication"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -37,4 +37,5 @@ dependencies {
     compile 'com.googlecode.totallylazy:totallylazy:1.64'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.5.1'
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.5.1'
+    
 }
