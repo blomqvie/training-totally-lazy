@@ -21,7 +21,7 @@ public class Exercise3 extends Exercise {
     public String getString() {
         // TODO:
         // return a string that has all the names and abvs of brewery id 1
-        String beers = getBeers()
+        String beers = getAllBeers()
                 .take(2)
                 .map((beer) -> "this is a beer")
                 .toString(",");
