@@ -11,6 +11,7 @@ import java.util.List;
 
 import fi.reaktor.training.totallylazy.data.Beer;
 import fi.reaktor.training.totallylazy.data.Beers;
+import fi.reaktor.training.totallylazy.data.Exercise;
 import training.reaktor.fi.totallylazyapplication.R;
 
 public class BeerAdapter extends BaseAdapter {
@@ -18,7 +19,10 @@ public class BeerAdapter extends BaseAdapter {
     List<Beer> beers;
 
     public BeerAdapter() {
-        beers = Beers.list().toList();
+        beers = Beers.listAll().toList();
+    }
+    public BeerAdapter(Exercise ex) {
+        beers = ex.getBeers().toList();
     }
 
 

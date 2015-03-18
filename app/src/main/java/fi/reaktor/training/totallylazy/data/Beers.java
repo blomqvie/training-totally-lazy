@@ -16,7 +16,7 @@ public class Beers {
         return new Beers();
     }
 
-    public static Sequence<Beer> list() {
+    public static Sequence<Beer> listAll() {
         return beers;
     }
 }
