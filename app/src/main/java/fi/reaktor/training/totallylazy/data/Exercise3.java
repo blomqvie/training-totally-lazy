@@ -20,17 +20,15 @@ public class Exercise3 extends Exercise {
     @Override
     public String getString() {
         // TODO:
-        // return a string that has all the names and abvs of brewery id 1
-        String beers = getAllBeers()
+        // return a string that has all the names and abvs of brewery id 1142
+        return getAllBeers()
                 .take(2)
-                .map((beer) -> "this is a beer")
-                .toString(",");
-        Log.d("beers", beers);
-        return beers;
+                .map((beer) -> "make a string here")
+                .toString(", ");
     }
 
     @Override
     public String getLabel() {
-        return "Beers of brewery id 1";
+        return "Beers of brewery id 1142";
     }
 }
