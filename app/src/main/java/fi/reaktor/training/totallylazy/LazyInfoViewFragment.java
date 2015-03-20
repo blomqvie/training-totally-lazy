@@ -8,13 +8,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import fi.reaktor.training.totallylazy.data.Beers;
 import fi.reaktor.training.totallylazy.data.Exercise;
 import fi.reaktor.training.totallylazy.data.Exercises;
+import rx.Observable;
+import rx.Subscription;
+import rx.android.app.AppObservable;
 import training.reaktor.fi.totallylazyapplication.R;
 
-public class LazyInfoViewFragment extends BeerFragment {
+public class LazyInfoViewFragment extends Fragment {
 
     private static final String SECTION_NUMBER = "SECTION_NUMBER";
+    private Subscription subscription;
 
     public static Fragment newInstance(int sectionNumber) {
         LazyInfoViewFragment f = new LazyInfoViewFragment();
@@ -32,13 +37,24 @@ public class LazyInfoViewFragment extends BeerFragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        subscribeToBeers(beers -> {
-            Exercise e = Exercises.getExerciseBySection(getArguments().getInt(SECTION_NUMBER));
-            TextView label = (TextView) view.findViewById(R.id.info_label);
-            TextView text = (TextView) view.findViewById(R.id.info_text);
-            label.setText(e.getLabel());
-            text.setText(e.getString(beers));
+        Exercise exercise = Exercises.getExerciseBySection(getArguments().getInt(SECTION_NUMBER));
+        Observable<String> textObservable = Beers.beers().map(exercise::getString);
+        subscription = AppObservable.bindFragment(this, textObservable).subscribe(text -> {
+            setupView(view, text, exercise.getLabel());
         });
+    }
+
+    @Override
+    public void onDestroyView() {
+        subscription.unsubscribe();
+        super.onDestroyView();
+    }
+
+    private void setupView(View view, String text, String label) {
+        TextView labelView = (TextView) view.findViewById(R.id.info_label);
+        TextView textView = (TextView) view.findViewById(R.id.info_text);
+        labelView.setText(text);
+        textView.setText(label);
     }
 }
 

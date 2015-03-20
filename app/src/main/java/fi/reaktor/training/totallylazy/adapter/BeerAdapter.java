@@ -17,8 +17,8 @@ public class BeerAdapter extends BaseAdapter {
 
     List<Beer> beers;
 
-    public BeerAdapter(Sequence<Beer> beersSequence, Exercise ex) {
-        beers = ex.getBeers(beersSequence).toList();
+    public BeerAdapter(Sequence<Beer> beersSequence) {
+        beers = beersSequence.toList();
     }
 
     @Override

@@ -33,8 +33,8 @@ public class Beers {
                         subscriber.onError(e);
                     }
                 })
-                .subscribeOn(Schedulers.io())
-                .cache();
+                .cache()
+                .subscribeOn(Schedulers.io());
     }
 
     public static Observable<Sequence<Beer>> beers() {
