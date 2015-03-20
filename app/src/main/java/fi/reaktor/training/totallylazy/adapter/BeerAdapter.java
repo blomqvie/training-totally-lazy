@@ -10,14 +10,17 @@ import com.googlecode.totallylazy.Sequence;
 import java.util.List;
 
 import fi.reaktor.training.totallylazy.data.Beer;
-import fi.reaktor.training.totallylazy.data.Exercise;
+import rx.android.view.ViewObservable;
+import rx.functions.Action1;
 import training.reaktor.fi.totallylazyapplication.R;
 
 public class BeerAdapter extends BaseAdapter {
 
     List<Beer> beers;
+    private Action1<Beer> itemClickAction;
 
-    public BeerAdapter(Sequence<Beer> beersSequence) {
+    public BeerAdapter(Sequence<Beer> beersSequence, Action1<Beer> itemClickAction) {
+        this.itemClickAction = itemClickAction;
         beers = beersSequence.toList();
     }
 
@@ -40,8 +43,14 @@ public class BeerAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         if(view == null) {
             view = View.inflate(viewGroup.getContext(), R.layout.beer, null);
-            BeerViewHolder holder = new BeerViewHolder(view);
+            BeerViewHolder holder = new BeerViewHolder(view, i);
             view.setTag(holder);
+
+            // TODO subscribes?
+            ViewObservable.clicks(view).map(e -> {
+                BeerViewHolder h = (BeerViewHolder) e.view().getTag();
+                return beers.get(h.index);
+            }).subscribe(itemClickAction);
         }
 
         BeerViewHolder holder = (BeerViewHolder) view.getTag();
@@ -55,8 +64,10 @@ public class BeerAdapter extends BaseAdapter {
 
         final TextView name;
         final TextView abv;
+        final int index;
 
-        public BeerViewHolder(View beerView) {
+        public BeerViewHolder(View beerView, int index) {
+            this.index = index;
             name = (TextView) beerView.findViewById(R.id.beer_name);
             abv = (TextView) beerView.findViewById(R.id.beer_abv);
         }
